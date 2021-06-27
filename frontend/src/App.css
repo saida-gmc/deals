@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  margin: 0 50px;
+}
+
+.connect {
+  color: #fff;
+  background-color: #ac46a1;
+  /* position: fixed; */
+  top: 0px;
+  width: 100%;
+  z-index: 30;
+  font-size: 0.9em;
+  padding: 9px;
+  text-align: right;
+}
+.icon-shop {
+  width: 20px;
+}
+.connect a {
+  color: #fff;
+  padding: 0 5px;
+}
+ul li {
+  display: list-item;
+  list-style-type: initial;
+  text-align: initial;
+  color: black;
+  text-transform: lowercase;
+}
+p {
+  text-align: initial;
+}
+.exclusive {
+  position: relative;
+  transition: all 300ms ease-in;
+  text-align: center;
+  line-height: 35px;
+  height: 35px;
+  border: 0;
+  color: white;
+  background: #ac46a1;
+  display: inline;
+
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.footer {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 100%;
+
+  padding-top: 50px;
+
+  height: 50px;
+}
+.center {
+display:flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+}

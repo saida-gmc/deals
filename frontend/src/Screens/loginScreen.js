@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
-import {Link} from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { login } from "../redux/actions/userActions";
 
-const loginScreen = () => {
+const LoginScreen = ({ history }) => {
+  const dispatch = useDispatch();
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+  const change = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+  const add = (e) => {
+    e.preventDefault();
+    dispatch(login(user, history));
+  };
   return (
     <div className="container">
       <div className="frame">
@@ -16,29 +30,29 @@ const loginScreen = () => {
             <input
               className="form-styling"
               type="text"
-              name="username"
+              name="email"
               placeholder
+              onChange={(e) => change(e)}
             />{" "}
             <label htmlFor="password">Password</label>{" "}
             <input
               className="form-styling"
-              type="text"
+              type="password"
               name="password"
               placeholder
+              onChange={(e) => change(e)}
             />{" "}
             <div>
-             <Link to="/profile">
-              <a className="btn-signin" href="login">
+              <a className="btn-signin" href="login" onClick={(e) => add(e)}>
                 Login to your account
               </a>{" "}
-              </Link>
             </div>
-            <br/>
+            <br />
             <div>
-             <Link to="/register">
-              <a className="btn-signin" href="login">
-                New ? Create your account
-              </a>{" "}
+              <Link to="/register">
+                <a className="btn-signin" href="login">
+                  New ? Create your account
+                </a>{" "}
               </Link>
             </div>
           </form>
@@ -48,4 +62,4 @@ const loginScreen = () => {
   );
 };
 
-export default loginScreen;
+export default LoginScreen;

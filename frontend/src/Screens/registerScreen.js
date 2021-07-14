@@ -1,7 +1,36 @@
-import React from "react";
-import {Link} from "react-router-dom"
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { register } from "../redux/actions/userActions";
 
-const loginScreen = () => {
+const RegisterScreen = ({ history }) => {
+  const dispatch = useDispatch();
+
+  const [newUser, setNewUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    phone: "",
+    adress: "",
+    role: "",
+  });
+  const change = (e) => {
+    setNewUser({
+      ...newUser,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const [checkedUser, setCheckedUser] = useState(false);
+  const [checkedProvider, setCheckedProvider] = useState(false);
+  const changeRole = (e) => {
+    setNewUser({ ...newUser, role: e.target.name });
+  };
+
+  console.log(newUser);
+  const add = (e) => {
+    e.preventDefault();
+    dispatch(register(newUser, history));
+  };
+
   return (
     <div className="container">
       <div className="frame">
@@ -10,27 +39,29 @@ const loginScreen = () => {
         </div>
         <div ng-app ng-init="checked = false">
           <form className="form-signin" action method="post" name="form">
-            {" "}
             <label htmlFor="fullname">Email</label>
             <input
               className="form-styling"
               type="text"
-              name="username"
+              name="email"
               placeholder
+              onChange={(e) => change(e)}
             />{" "}
             <label htmlFor="password">Password</label>{" "}
             <input
               className="form-styling"
-              type="text"
+              type="password"
               name="password"
               placeholder
+              onChange={(e) => change(e)}
             />{" "}
-            <label htmlFor="pnamehone">Name</label>{" "}
+            <label htmlFor="name">Name</label>{" "}
             <input
               className="form-styling"
               type="text"
               name="name"
               placeholder
+              onChange={(e) => change(e)}
             />
             <label htmlFor="adress">Adress</label>{" "}
             <input
@@ -38,20 +69,47 @@ const loginScreen = () => {
               type="text"
               name="adress"
               placeholder
+              onChange={(e) => change(e)}
             />{" "}
-            <label htmlFor="paphonessword">Phone</label>{" "}
+            <label htmlFor="phone">Phone</label>{" "}
             <input
               className="form-styling"
               type="text"
               name="phone"
               placeholder
+              onChange={(e) => change(e)}
             />
-            <div>
-  <Link to="/profile">              
-  <a className="btn-signin" href="register">
+            <div className="box">
+              <input
+                type="checkbox"
+                id="provider"
+                name="provider"
+                onClick={() => setCheckedProvider(!checkedProvider)}
+                onChange={(e) => changeRole(e)}
+                disabled={checkedUser}
+              />
+              <label for="provider"> Provider</label>
+              <br />
+              <input
+                type="checkbox"
+                id="user"
+                name="user"
+                onClick={() => setCheckedUser(!checkedUser)}
+                onChange={(e) => changeRole(e)}
+                disabled={checkedProvider}
+              />
+              <label for="user"> User</label>
+              <br />
+              {/* <button
+                className="btn-signin"
+                href="register"
+                onClick={(e) => add(e)}
+              >
                 register
-              </a>
-              </Link>
+              </button> */}
+              <a className="btn-signin" href="login" onClick={(e) => add(e)}>
+                register
+              </a>{" "}
             </div>
           </form>
         </div>
@@ -60,4 +118,4 @@ const loginScreen = () => {
   );
 };
 
-export default loginScreen;
+export default RegisterScreen;

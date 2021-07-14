@@ -1,0 +1,252 @@
+body {
+  background-color: #31394d;
+}
+.color-carduser {
+  background: #31394d;
+}
+
+.color-carduser-2 {
+  background: #fdfeff;
+}
+.title {
+  color: #ffffff;
+  font-family: roboto;
+  height: 300;
+  align-items: center;
+}
+.title-2 {
+  color: #2d354a;
+  font-family: roboto;
+  height: 300;
+}
+
+.job-title {
+  color: #7c8097;
+  font-size: 12px;
+  height: 100px;
+  font-family: roboto;
+}
+
+.desc {
+  font-size: 12px;
+  margin-left: 65px;
+  margin-right: 65px;
+  color: #b7b8c0;
+  text-align: center;
+}
+
+.i-l {
+  float: left;
+  margin-left: 16px;
+  margin-top: 16px;
+}
+.i-r {
+  float: right;
+  margin-right: 16px;
+  margin-top: 16px;
+}
+.w {
+  color: #ffffff;
+}
+.b {
+  color: #2f3b4b;
+}
+hr {
+  border-color: #7c8097;
+  width: 90%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.hr-2 {
+  border-color: #e4e8ed;
+}
+
+.content {
+  display: center;
+}
+
+* {
+  font-family: Roboto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.top {
+  margin-top: 16px;
+}
+.color-a {
+  background: linear-gradient(to top right, #8162ce, #f54ba5);
+}
+
+.color-b {
+  background: linear-gradient(to bottom right, #c90a6d, #ff48a0);
+}
+
+.color-c {
+  background: linear-gradient(to bottom right, #5e5aec, #3f9efc);
+}
+.color-d {
+  background: linear-gradient(to bottom right, #6452e9, #639ff9);
+}
+
+.btn {
+  border: none;
+  height: 40px;
+  color: #ffffff;
+  width: 35%;
+  font-size: 16px;
+  border-radius: 30px;
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.btn:hover {
+  border: solid 1px #da59b1;
+  height: 40px;
+  font-family: Roboto;
+  color: #da59b1;
+  background: #ffffff;
+  width: 35%;
+  border-color: linear-gradient(to top right, #8162ce, #f54ba5);
+  border-radius: 30px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.circule {
+  border-radius: 50%;
+  border: none;
+  height: 60px;
+  width: 60px;
+  color: #ffffff;
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.up {
+  margin-top: 40px;
+}
+
+.img {
+  width: 280px;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0px;
+  position: relative;
+  display: flex;
+}
+
+.container:after,
+.container:before {
+  content: " ";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+}
+
+.grid-07 {
+  display: flex;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 375px;
+}
+
+/*cards*/
+body {
+  text-align: center;
+}
+
+.carduser {
+  align-items: center;
+  border-radius: 6px;
+  display: inline-block;
+  height: 500px;
+  margin: 1rem;
+  position: relative;
+  width: 375px;
+  box-shadow: 0 12px 13px rgba(0, 0, 0, 0.16), 0 12px 13px rgba(0, 0, 0, 0.16);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.carduser-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.carduser-elevation {
+  /*sombra*/
+  -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+  box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+}
+
+.header {
+  background: linear-gradient(to bottom right, #f762d2, #ff51a0);
+  height: 250px;
+}
+
+.profile {
+  /* border-radius: 80%; */
+  margin-top: 60px;
+  width: 132px;
+  height: 128px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.element-animation {
+  animation: animationFrames ease 2s;
+  animation-iteration-count: 2;
+  transform-origin: 50% 50%;
+  animation-fill-mode: forwards; /*when the spec is finished*/
+  -webkit-animation: animationFrames ease 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode: forwards; /*Chrome 16+, Safari 4+*/
+}
+
+@keyframes animationFrames {
+  0% {
+    opacity: 0;
+    transform: translate(-1500px, 0px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(30px, 0px);
+  }
+  80% {
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes animationFrames {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-1500px, 0px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(30px, 0px);
+  }
+  80% {
+    -webkit-transform: translate(-10px, 0px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+  }
+}

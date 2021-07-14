@@ -19,10 +19,13 @@ connectBD();
 
 const PORT = process.env.PORT;
 //routes
-// const userRoutes = require("./routes/userRoutes");
+const userRoutes = require("./routes/userRoutes");
+const dealRoutes = require("./routes/dealsRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 
-// app.use("/api/deals", dealRoutes);
-// app.use("/api/users", userRoutes);
+app.use("/api/deals", dealRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/confirm", orderRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running");

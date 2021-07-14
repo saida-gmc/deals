@@ -10,13 +10,13 @@ export const dealListReducer = (state = initialState, { type, payload }) => {
         ...state,
         load: true,
       };
-    case "DEAL_LIST_SUCESS":
+    case "GET_DEALS_SUCCESS":
       return {
         ...state,
         deals: payload,
         load: false,
       };
-    case "DEAL_LIST_FAIL":
+    case "GET_DEALS_FAILED":
       return {
         ...state,
         load: false,
@@ -24,8 +24,31 @@ export const dealListReducer = (state = initialState, { type, payload }) => {
       };
 
     default:
+      return state;
+  }
+};
+
+export const dealDetailsReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "LOAD":
       return {
-        state,
+        ...state,
+        load: true,
       };
+    case "GET_DETAILS_SUCCESS":
+      return {
+        ...state,
+        deals: payload,
+        load: false,
+      };
+    case "GET_DETAILS_FAILED":
+      return {
+        ...state,
+        load: false,
+        errors: payload,
+      };
+
+    default:
+      return state;
   }
 };

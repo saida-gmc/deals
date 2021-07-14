@@ -5,8 +5,10 @@ const DealSchema = new Schema({
   description: String,
   pictureURL: String,
   date: String,
-  price: String,
+  price: Number,
+  promo: String,
   location: String,
   details: String,
+  provider: String,
 });
 module.exports = model("deal", DealSchema);

@@ -14,6 +14,7 @@ exports.Register = async (req, res) => {
 
     const newUser = new User({ ...req.body });
     // hashage
+
     const hashPwd = await bcrypt.hash(password, saltRounds);
     newUser.password = hashPwd;
 
@@ -23,9 +24,11 @@ exports.Register = async (req, res) => {
         id: newUser._id,
       },
       process.env.SECRET_KEY,
-      { expiresIn: "3h" }
+      { expiresIn: "24h" }
     );
+    console.log(process.env.SECRET_KEY);
     await newUser.save();
+
     res.send({ msg: "user registred", user: newUser, token });
   } catch (error) {
     res.status(500).send({
@@ -66,7 +69,6 @@ exports.Login = async (req, res) => {
     const token = jwt.sign({ id: findUser._id }, process.env.SECRET_KEY, {
       expiresIn: "3h",
     });
-    console.log(findUser.role);
     res.send({ message: "login successfully ", token, user: findUser });
   } catch (error) {
     res.status(500).send({
@@ -79,14 +81,16 @@ exports.Login = async (req, res) => {
     console.log(error);
   }
 };
-// exports.updateUser = async (req, res) => {
-//   try {
-//     await User.findOneAndUpdate(
-//       { _id: req.params.id },
-//       { $set: { ...req.body } }
-//     );
-//     res.send({ mesage: "the user is updated" });
-//   } catch (error) {
-//     res.status(500).send("server error");
-//   }
-// };
+
+exports.updateUser = async (req, res) => {
+  try {
+    const find = await User.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: { ...req.body } }
+    );
+    console.log(find);
+    res.send({ mesage: "the user is updated" });
+  } catch (error) {
+    res.status(500).send("server error");
+  }
+};

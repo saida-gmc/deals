@@ -6,20 +6,32 @@
 .connect {
   color: #fff;
   background-color: #ac46a1;
-  /* position: fixed; */
   top: 0px;
   width: 100%;
   z-index: 30;
-  font-size: 0.9em;
+  font-size: 1em;
   padding: 9px;
   text-align: right;
 }
 .icon-shop {
   width: 20px;
 }
+.navbar form-control {
+  margin: 0 0 0 50px;
+}
 .connect a {
   color: #fff;
   padding: 0 5px;
+}
+.totalprice {
+  font-size: 150%;
+}
+.col-md-6 img {
+  width: 500px;
+  height: 600px;
+}
+.col-md-6 {
+  width: 70%;
 }
 ul li {
   display: list-item;
@@ -31,8 +43,12 @@ ul li {
 p {
   text-align: initial;
 }
+.align {
+  text-align: start;
+}
 .exclusive {
   position: relative;
+  margin: 12px;
   transition: all 300ms ease-in;
   text-align: center;
   line-height: 35px;
@@ -46,20 +62,24 @@ p {
   font-size: 16px;
   font-weight: 700;
 }
-.footer {
-  position: absolute;
 
-  bottom: 0;
-
-  width: 100%;
-
-  padding-top: 50px;
-
-  height: 50px;
+.centerhome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.center {
-display:flex;
-align-items: center;
-justify-content: center;
-flex-wrap: wrap;
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+td {
+  width: 280px;
+}
+col-md-4 {
+  flex: 0 0 auto;
+  width: 10%;
+  justify-content: flex-end;
+}
+h1 {
+  color: black;
 }

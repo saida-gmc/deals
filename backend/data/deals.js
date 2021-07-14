@@ -74,3 +74,80 @@ const deals = [
   },
 ];
 module.exports = deals;
+
+/**
+ * Paste one or more documents here
+ */
+// {
+//   "category": "beauté",
+//   "description": "Mini soins de mains + Pose vernis permanent",
+//   "pictureURL": "https://thumbs.dreamstime.com/b/signe-d-affaire-5823877.jpg",
+//   "date": "20/06/2021",
+//   "price": "10dt au lieu de 35dt",
+//   "location": "Manar",
+//   "details": "Mini soins de mains  & Pose vernis permanent",
+// },
+// {
+//   "category": "beauté",
+//   "description": "Soin capillaire + Brushing",
+//   "pictureURL": "/images/soin capillaire.jpg",
+//   "date": "20/06/2021",
+//   "price": "30dt au lieu de 70dt",
+//   "location": "Menzah6",
+//   "details": "Soin capillaire & Brushing",
+// },
+// {
+//   "category": "beauté",
+//   "description": "Cils à cils + maquillage de jour + épilation sourcils",
+//   "pictureURL": "https://thumbs.dreamstime.com/b/signe-d-affaire-5823877.jpg",
+//   "date": "20/06/2021",
+//   "price": "50dt au lieu de 100dt",
+//   "location": "Menzah8",
+//   "details": "Cils à cils & maquillage de jour & épilation sourcils",
+// },
+
+// {
+//   "category": "détente",
+//   "description": "massage au bambou et modelage du visage",
+//   "pictureURL": "https://thumbs.dreamstime.com/b/signe-d-affaire-5823877.jpg",
+//   "date": "20/06/2021",
+//   "price": "40 dt au lieu de 90 dt",
+//   "location": "Manar",
+//   "details": "massage au bambou & modelage du visage",
+// },
+// {
+//   "category": "détente",
+//   "description": "Un massage relaxant corps complet (40 min)",
+//   "pictureURL": "https://thumbs.dreamstime.com/b/signe-d-affaire-5823877.jpg",
+//   "date": "20/06/2021",
+//   "price": "35dt au lieu de 70dt",
+//   "location": "Tunis",
+//   "details": "Un massage relaxant corps complet (40 min)",
+// },
+// {
+//   "category": "détente",
+//   "description": "Massage californien aux pierres chaudes",
+//   "pictureURL": "https://thumbs.dreamstime.com/b/signe-d-affaire-5823877.jpg",
+//   "date": "20/06/2021",
+//   "price": "40dt au lieu de 80dt",
+//   "location": "Ennasr",
+//   "details": "Massage californien aux pierres chaudes",
+// },
+// {
+//   "category": "sport",
+//   "description": "Abonnement mensuel en accés illimité à la salle de sport",
+//   "pictureURL": "https://thumbs.dreamstime.com/b/signe-d-affaire-5823877.jpg",
+//   "date": "20/06/2021",
+//   "price": "40dt au lieu de70 dt",
+//   "location": "Marsa",
+//   "details": "Abonnement mensuel en accés illimité à la salle de sport",
+// },
+// {
+//   "category": "sport",
+//   "description": "abonnement de 3 mois(H/F) en illimité à la salle de sport",
+//   "pictureURL": "https://thumbs.dreamstime.com/b/signe-d-affaire-5823877.jpg",
+//   "date": "20/062021",
+//   "price": "99dt au lieu de 180dt",
+//   "location": "Aouina",
+//   "details": "abonnement de 3 mois(H/F) en illimité à la salle de sport",
+// }

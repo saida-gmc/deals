@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Header from "./Components/Header";
 import React, { useEffect } from "react";
-// import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
 import HomeScreen from "./Screens/HomeScreen";
 import DealScreen from "./Screens/DealScreen";
 import loginScreen from "./Screens/LoginScreen";
@@ -31,7 +31,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div>
       <Header />
       <Switch>
         <Route exact path="/" component={HomeScreen}></Route>
@@ -61,7 +61,7 @@ function App() {
         <Route path="/categories/sport" component={DealsSport}></Route>
         <Route path="/categories/detente" component={DealsDetente}></Route>
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

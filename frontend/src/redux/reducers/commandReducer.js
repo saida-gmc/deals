@@ -29,6 +29,7 @@ const cartReducer = (state = initialState, { type, payload }) => {
               location: payload.location,
               provider: payload.provider,
               qty: 1,
+              status: "registred",
             },
           ],
           cartTotal: state.cartDetails.reduce(

@@ -36,7 +36,7 @@ export const getOrder = () => async (dispatch) => {
     });
   } catch (error) {
     dispatch({
-      type: "CREATE_ORDER_FAILED",
+      type: "GET_ORDER_FAIL",
       payload: error.response,
     });
   }
@@ -49,15 +49,32 @@ export const getOrderByID = (id) => async (dispatch) => {
       },
     };
     const result = await axios.get(`/api/confirm/all/${id}`, config);
-    console.log("order");
+
     dispatch({
       type: "GET_ORDER",
       payload: result.data,
     });
   } catch (error) {
     dispatch({
-      type: "CREATE_ORDER_FAILED",
+      type: "GET_ORDER_FAIL",
       payload: error.response,
     });
+  }
+};
+export const editOrder = (id, newOrder) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        authorization: localStorage.getItem("token"),
+      },
+    };
+    const { data } = await axios.put(`/api/confirm/${id}`, newOrder, config);
+    dispatch({
+      type: "UPDATE_ORDER",
+      payload: data.order,
+    });
+  } catch (error) {
+    dispatch({ type: "GET_ORDER_FAIL", payload: error });
+    console.log(error);
   }
 };

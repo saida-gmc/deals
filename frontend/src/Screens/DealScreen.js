@@ -249,15 +249,17 @@ const DealScreen = ({ match, history }) => {
                       <Modal.Title>Mettre à jour</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <label className="col-form-label">category</label>
-                      <input
-                        className="form-control"
-                        value={newDeal.category}
-                        type="text"
+                      <select
+                        className="form-select form-select-sm"
+                        aria-label=".form-select-sm example"
                         name="category"
-                        placeholder="enter"
                         onChange={(e) => change(e)}
-                      />
+                      >
+                        <option selected>Choisir une catégorie</option>
+                        <option name="beauté">beauté</option>
+                        <option name="détente">détente</option>
+                        <option name="sport">sport</option>
+                      </select>
                       <label className="col-form-label">description</label>
                       <input
                         className="form-control"
@@ -307,7 +309,7 @@ const DealScreen = ({ match, history }) => {
                       <input
                         className="form-control"
                         type="au lieu de"
-                        name="promo"
+                        name="price"
                         value={newDeal.price}
                         placeholder="enter"
                         onChange={(e) => change(e)}

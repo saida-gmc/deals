@@ -11,7 +11,6 @@ export const addToCart = (item) => {
       description: item.description,
       pictureURL: item.pictureURL,
       price: item.price,
-      location: item.location,
       provider: item.provider,
       qty: 1,
     },

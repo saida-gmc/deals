@@ -24,6 +24,14 @@ export const orderReducer = (state = initialState, { type, payload }) => {
         ...state,
         error: payload,
       };
+    case "UPDATE_ORDER":
+      const existOrder = state.order.find((el) => el._id === payload._id);
+      return {
+        ...state,
+        order: state.order.map((el) =>
+          el._id === existOrder._id ? payload : el
+        ),
+      };
 
     default:
       return state;

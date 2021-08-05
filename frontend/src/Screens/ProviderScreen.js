@@ -4,24 +4,23 @@ import { Button, Modal } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { editUser } from "../redux/actions/userActions";
 import { addDeal, listDeals } from "../redux/actions/dealActions";
-import { getOrder } from "../redux/actions/orderActions";
-import OrderCard from "./OrderCard";
+import { getOrder, editOrder } from "../redux/actions/orderActions";
 import Card from "./Card";
+import ProviderCard from "./ProviderCard";
 
 const ProviderScreen = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userList.user);
   const dealList = useSelector((state) => state.dealList.deals);
   const deal = dealList.filter((deal) => deal.provider === user._id);
-  const getorders = useSelector((state) => state.order.order);
-  const myorders = getorders.filter((order) => order.provideID === user._id);
-  console.log(myorders);
+  const myorders = useSelector((state) => state.orderList.order);
+  const filter = myorders.filter((el) => el.orderItems.provider === user._id);
 
+  console.log(filter);
   useEffect(() => {
     dispatch(listDeals());
     dispatch(getOrder());
   }, [dispatch]);
-  console.log(dealList);
   const providerID = user._id;
   //modal edit user
   const handleShow = () => setShow(true);
@@ -66,6 +65,17 @@ const ProviderScreen = () => {
     dispatch(addDeal(newDeal));
     handleClose1();
   };
+  //update status
+  const [newstatus, setNewStatus] = useState();
+  const changeStatus = (e) => {
+    setNewStatus({ ...newstatus, status: e.target.value });
+  };
+  const status = (e) => {
+    e.preventDefault();
+    dispatch(editOrder(filter._id, newstatus));
+  };
+  console.log(newstatus);
+  console.log(filter);
 
   return (
     <div>
@@ -217,7 +227,7 @@ const ProviderScreen = () => {
                     <input
                       className="form-control"
                       type="text"
-                      name="promo"
+                      name="price"
                       placeholder="enter"
                       onChange={(e) => changeDeal(e)}
                     />
@@ -252,14 +262,27 @@ const ProviderScreen = () => {
             <div className="projects">
               <h3>My orders</h3>
               <div className="projects_data">
-                {myorders.length === 0 ? (
+                {filter.length === 0 ? (
                   <h5>Vous n'avez pas de commandes actuellement</h5>
                 ) : (
                   <div>
                     {" "}
-                    {myorders.map((deal, key) => (
-                      <OrderCard key={deal._id} deal={deal} />
-                    ))}{" "}
+                    <div>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>order</th>
+                            <th>price</th>
+                            <th>quantité</th>
+                            <th>status</th>
+                            <th>changer le status</th>
+                          </tr>
+                        </thead>
+                        {filter.map((deal, key) => (
+                          <ProviderCard key={deal._id} deal={deal} />
+                        ))}
+                      </table>
+                    </div>{" "}
                   </div>
                 )}
               </div>

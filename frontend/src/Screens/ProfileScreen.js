@@ -4,6 +4,7 @@ import { Button, Modal } from "react-bootstrap";
 import { editUser } from "../redux/actions/userActions";
 import { getOrder } from "../redux/actions/orderActions";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ProfileScreen = () => {
   const dispatch = useDispatch();
@@ -14,16 +15,20 @@ const ProfileScreen = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const user = useSelector((state) => state.userList.user);
-  const getorders = useSelector((state) => state.orderList.order);
-  // const orders = getorders.map((el) => el.orderItems);
-  // const users = getorders.map((el) => el.user);
+  const getorders = useSelector((state) => state.orderList.order).filter(
+    (el) => el.user === user._id
+  );
 
-  // const filter = getorders.filter((el) => el === user._id);
-  // // console.log(filter);
-  // console.log("map user", users);
-  // console.log("map items", orders);
-  // console.log("filter", filter);
-  console.log(getorders);
+  const filter = getorders
+    .filter((el) => el.user === user._id)
+    .map((el) => el.orderItems);
+  const stat = getorders
+    .filter((el) => el.user === user._id)
+    .map((el) => el.status);
+  console.log(stat);
+
+  console.log("filter", filter);
+  console.log("orders", getorders);
   const [newUser, setNewUser] = useState(user);
   const change = (e) => {
     setNewUser({
@@ -112,11 +117,15 @@ const ProfileScreen = () => {
             </div>
           </div>
         </div>
-        {/* <div className="projects">
+        <div className="projects">
           <h3>My orders</h3>
           <div className="projects_data">
             {getorders.length === 0 ? (
-              <h5>Vous n'avez pas de commandes actuellement</h5>
+              <h5>
+                Vous n'avez pas de commandes actuellement, pour finaliser votre
+                commande veuillez accéder à votre{" "}
+                <Link to="/confirm">panier</Link>{" "}
+              </h5>
             ) : (
               <div>
                 {" "}
@@ -127,13 +136,15 @@ const ProfileScreen = () => {
                         <th>order</th>
                         <th>price</th>
                         <th>quantité</th>
+                        <th>status</th>
                       </tr>
                     </thead>
-                    {orders.map((deal, key) => (
+                    {getorders.map((deal, key) => (
                       <tbody key={deal._id}>
-                        <td>{deal.description}</td>
-                        <td>{deal.price} DT</td>
-                        <td>{deal.qty}</td>
+                        <td>{deal.orderItems.description}</td>
+                        <td>{deal.orderItems.price} DT</td>
+                        <td>{deal.orderItems.qty}</td>
+                        <td>{deal.status}</td>
                       </tbody>
                     ))}
                   </table>
@@ -141,7 +152,7 @@ const ProfileScreen = () => {
               </div>
             )}
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

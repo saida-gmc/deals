@@ -6,6 +6,8 @@ const OrderSchema = new Schema({
     required: true,
     ref: "user",
   },
+  status: { type: String, required: true },
+
   orderItems: {
     description: { type: String, required: true },
     qty: { type: Number, required: true },
@@ -16,7 +18,6 @@ const OrderSchema = new Schema({
       required: true,
       ref: "deal",
     },
-    location: { type: String, required: true },
     provider: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,

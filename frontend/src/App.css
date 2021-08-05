@@ -27,8 +27,8 @@
   font-size: 150%;
 }
 .col-md-6 img {
-  width: 500px;
-  height: 600px;
+  width: 80%;
+  height: 100%;
 }
 .col-md-6 {
   width: 70%;
@@ -82,4 +82,11 @@ col-md-4 {
 }
 h1 {
   color: black;
+}
+footer {
+  position: relative;
+  margin: 150px 0 0 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
 }
